@@ -21,8 +21,8 @@ $s-device: 376px;
 // Main
 body {
   font-family: "League Spartan";
-  background-image: url(/images/bg-pattern-top-desktop.svg),
-    url(/images/bg-pattern-bottom-desktop.svg);
+  background-image: url(../images/bg-pattern-top-desktop.svg),
+    url(./images/bg-pattern-bottom-desktop.svg);
   background-repeat: no-repeat, no-repeat;
   background-position: left top, right bottom;
   display: flex;
@@ -70,7 +70,7 @@ body {
         display: inline-block;
         width: 85px;
         height: 17px;
-        background-image: url(/images/icon-star.svg);
+        background-image: url(./images/icon-star.svg);
         background-position: center;
         background-repeat: repeat-x;
         margin-right: 10px;
