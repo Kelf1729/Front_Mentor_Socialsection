@@ -1,0 +1,141 @@
+// Reset
+* {
+  margin: 0px;
+  padding: 0px;
+}
+// Colors
+$primary-color0: hsl(300, 43%, 22%);
+$primary-color1: hsl(333, 80%, 67%);
+$neutral-color0: hsl(303, 10%, 53%);
+$neutral-color1: hsl(300, 24%, 96%);
+$neutral-color2: hsl(0, 0%, 100%);
+// Device
+$s-device: 376px;
+@mixin d($size) {
+  @if $size == s {
+    @media screen and (max-width: $s-device) {
+      @content;
+    }
+  }
+}
+// Main
+body {
+  font-family: "League Spartan";
+  background-image: url(/images/bg-pattern-top-desktop.svg),
+    url(/images/bg-pattern-bottom-desktop.svg);
+  background-repeat: no-repeat, no-repeat;
+  background-position: left top, right bottom;
+  display: flex;
+  justify-content: center;
+  min-width: 100vw;
+  min-height: 100vh;
+  align-items: center;
+  // min-height: 100vh;
+}
+.container {
+  max-width: 1000px;
+  display: grid;
+  grid-template-columns: 400px 600px;
+  row-gap: 60px;
+  margin: 0 auto;
+  @include d(s) {
+    grid-template-columns: 1fr;
+  }
+  // Ajustar depois
+  .container-top-left {
+    h1 {
+      font-size: 2.5rem;
+      color: $primary-color0;
+      width: 15ch;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 1rem;
+      line-height: 1.5;
+      color: $neutral-color0;
+    }
+  }
+  .container-top-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    h3 {
+      color: $primary-color0;
+      background-color: $neutral-color1;
+      padding: 10px 15px;
+      border-radius: 10px;
+      width: 400px;
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 85px;
+        height: 17px;
+        background-image: url(/images/icon-star.svg);
+        background-position: center;
+        background-repeat: repeat-x;
+        margin-right: 10px;
+      }
+    }
+    h3:nth-child(2) {
+      align-self: center;
+    }
+    h3:nth-child(3) {
+      align-self: end;
+    }
+  }
+}
+// Bottom
+.container-bottom {
+  grid-column: 1/-1;
+  display: flex;
+  min-height: 300px;
+  gap: 15px;
+  @include d(s) {
+    flex-direction: column;
+  }
+  .container-cel {
+    max-width: 300px;
+    min-height: 180px;
+    max-height: 180px;
+    background-color: $primary-color0;
+    border-radius: 10px;
+    padding: 20px;
+    @include d(s) {
+      align-self: center;
+    }
+    .profile {
+      display: flex;
+      align-items: center;
+      padding-bottom: 20px;
+      gap: 15px;
+      img {
+        border-radius: 50%;
+        height: 40px;
+      }
+      h2 {
+        color: white;
+        font-size: 1rem;
+      }
+      h3 {
+        font-size: 1rem;
+        color: $primary-color1;
+      }
+    }
+    p {
+      color: white;
+      line-height: 1.5;
+    }
+  }
+  .container-cel:nth-child(2) {
+    align-self: center;
+    @include d(s) {
+      align-self: center;
+    }
+  }
+  .container-cel:nth-child(3) {
+    align-self: flex-end;
+    @include d(s) {
+      align-self: center;
+    }
+  }
+}
