@@ -28,7 +28,7 @@ Modelo base para construção do desafio
 ### Links
 
 - Solution URL: [https://github.com/Kelf1729/Front_Mentor_Socialsection.git]
-- Live Site URL: [https://kelf1729.github.io/Front_Mentor_ProfileCard/]
+- Live Site URL: [https://kelf1729.github.io/Front_Mentor_Socialsection/]
 
 ## My process
 
